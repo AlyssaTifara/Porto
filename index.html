@@ -37,36 +37,131 @@
         </div>
     </header>
 
-    <!-- ========================================
-         HERO SECTION
-         Edit: Name, positioning statement, intro
-         ======================================== -->
+    <!-- ===============================================
+            HERO SECTION WITH PROFILE PHOTO
+        Edit: Name, positioning statement, intro, photo
+    ===================================================== -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <!-- EDIT: Replace with your name -->
-                <h1 class="hero-title">
-                    Hi, I'm <span style="color: var(--primary-color);">Alyssa Tifara Yuwono</span>
-                </h1>
-                
-                <!-- Positioning Statement -->
-                <h2 style="font-size: 1.5rem; font-weight: 500; color: var(--text-gray); margin-bottom: 1.5rem;">
-                    Aspiring Data Analyst with strong interest in data-driven insights and system quality improvement.
-                </h2>
-                
-                <!-- Short Introduction -->
-                <p class="hero-description">
-                    Information Systems student with experience in data analysis projects. 
-                    Currently preparing for internship opportunities as a Data Analyst, with 
-                    growing interest in system quality and process improvement.
-                </p>
-                
-                <!-- Call-to-Action Buttons -->
-                <div class="btn-group">
-                    <!-- EDIT: Update href links to your actual project page and CV file -->
-                    <a href="projects.html" class="btn btn-primary">View Projects</a>
-                    <a href="#" class="btn btn-secondary" download>Download CV</a>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <!-- Hero Content (Left) -->
+                <div class="hero-content">
+                    <!-- EDIT: Replace with your name -->
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="hero-name">Alyssa Tifara Yuwono</span>
+                    </h1>
+                    
+                    <!-- Positioning Statement
+                    <h2 style="font-size: 1.5rem; font-weight: 500; color: var(--text-gray); margin-bottom: 1.5rem;">
+                        Aspiring Data Analyst with strong interest in data-driven insights and system quality improvement.
+                    </h2>
+                    -->
+                    
+                    <!-- Short Introduction -->
+                    <p class="hero-description">
+                        Information Systems student with experience in data analysis projects. 
+                        Currently preparing for internship opportunities as a Data Analyst, with 
+                        growing interest in system quality and process improvement.
+                    </p>
+                    
+                    <!-- Call-to-Action Buttons -->
+                    <div class="btn-group">
+                        <!-- EDIT: Update href links to your actual project page and CV file -->
+                        <a href="projects.html" class="btn btn-primary">View Projects</a>
+                        <a href="#" class="btn btn-secondary" download>Download CV</a>
+                    </div>
                 </div>
+
+                <!-- Profile Photo Section (Right) -->
+                <div class="profile-photo-section">
+                    <!-- EDIT: Replace the src with your actual profile photo URL -->
+                    <!-- Recommended: Use a professional headshot or professional casual photo -->
+                    <!-- Placeholder dimensions: Square image (400x400px or larger recommended) -->
+                    <div class="profile-photo-container frame-charm">
+                        <!-- EDIT: Local photo used; replace if you move/rename the file -->
+                        <img src="photo_landing%20page.png" 
+                            alt="Professional profile photo of Alyssa Tifara Yuwono" 
+                            class="profile-photo">
+                    </div>
+                    <p class="profile-subtitle">
+                        <!-- EDIT: Update with your professional role/focus -->
+                        Data Analyst | Process Improvement | Quality Systems
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROJECT PREVIEW SECTION
+         Shows project cards that link to detailed Projects page
+         Edit: Project titles and descriptions
+         ======================================== -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recent Work</h2>
+                <p class="section-subtitle">Click on a project to see the full case study</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- PROJECT CARD 1 -->
+                <a href="projects.html" class="project-card fade-in-card" aria-label="View project details">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Mesin ATM</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Identified bottlenecks in ATM transaction steps and recommended UI/flow tweaks to reduce failure rate and average handling time.
+                    </p>
+                    <div class="tool-tags">
+                        <span class="tag python">Python</span>
+                        <span class="tag excel">Excel</span>
+                        <span class="tag process">Process Mapping</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
+
+                <!-- PROJECT CARD 2 -->
+                <a href="projects.html" class="project-card fade-in-card" aria-label="View project details">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Customer Retention Snapshot</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Cohort-based view of repeat behavior to highlight early actions that correlate with 6‑month retention.
+                    </p>
+                    <div class="tool-tags">
+                        <span class="tag sql">SQL</span>
+                        <span class="tag tableau">Tableau</span>
+                        <span class="tag eda">EDA</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
+
+                <!-- PROJECT CARD 3 -->
+                <a href="projects.html" class="project-card fade-in-card" aria-label="View project details">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Order Delay Diagnostic</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Root-cause snapshot for afternoon shift delays; produced actionable checklist for operations.
+                    </p>
+                    <div class="tool-tags">
+                        <span class="tag python">Python</span>
+                        <span class="tag powerbi">Power BI</span>
+                        <span class="tag qa">QA</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>

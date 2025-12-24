@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Data analysis project case studies and methodology.">
+    <meta name="description" content="Data analysis projects portfolio - case studies and insights.">
     <title>Projects - Alyssa Tifara Yuwono</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- ========================================
-         HEADER & NAVIGATION
-         ======================================== -->
+                HEADER & NAVIGATION
+        ======================================== -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Your <span>Name</span></div>
+                <div class="logo">Alyssa <span>Tifara</span></div>
                 
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
@@ -35,9 +35,9 @@
     </header>
 
     <!-- ========================================
-         PROJECTS SECTION
-         Edit: All project details below
-         ======================================== -->
+                PROJECTS SECTION
+            Edit: All project details below
+        ======================================== -->
     <section>
         <div class="container">
             <div class="section-header">
@@ -45,161 +45,72 @@
                 <p class="section-subtitle">Data analysis case studies with detailed methodology and insights</p>
             </div>
 
-            <!-- PROJECT CASE STUDY -->
-            <div class="project-case-study">
-                <!-- Project Header -->
-                <div class="case-study-header">
-                    <!-- EDIT: Project title and brief description -->
-                    <h2 style="color: var(--primary-color);">Project Title: [Your Project Name Here]</h2>
-                    <p style="color: var(--text-light); font-size: 1rem;">
-                        Brief overview: What was this project about? Who was it for?
+            <div class="projects-grid">
+                <a href="project-detail.html?id=atm" class="project-card fade-in-card" aria-label="View project details for Mesin ATM">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">SIAkre</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Mapped ATM transaction steps, flagged failure-prone screens, and proposed UI/flow tweaks to cut drop-offs.
                     </p>
-                </div>
+                    <div class="tool-tags">
+                        <span class="tag java">Java</span>
+                        <span class="tag flowchart">Flowchart</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
 
-                <!-- 1. PROBLEM -->
-                <div class="case-study-section">
-                    <h3>Problem</h3>
-                    <p>
-                        <!-- EDIT: Describe the problem being analyzed -->
-                        <strong>What problem was analyzed?</strong><br>
-                        [Describe the business or operational problem that needed data analysis. 
-                        For example: "High customer churn rate affecting revenue" or 
-                        "Unclear factors causing order delays in the system."]
+                <a href="project-detail.html?id=retention" class="project-card fade-in-card" aria-label="View project details for Customer Retention">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Studify Mobile</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Cohort view of early behaviors that link to 6‑month retention; highlights where to focus onboarding nudges.
                     </p>
-                    <p>
-                        <strong>Why is it important?</strong><br>
-                        [Explain the impact and why solving this matters. 
-                        For example: "Understanding churn patterns can help retain customers and 
-                        improve service quality" or "Identifying delay causes can improve efficiency 
-                        and customer satisfaction."]
-                    </p>
-                </div>
+                    <div class="tool-tags">
+                        <span class="tag sql">SQL</span>
+                        <span class="tag tableau">Tableau</span>
+                        <span class="tag eda">EDA</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
 
-                <!-- 2. DATA & TOOLS -->
-                <div class="case-study-section">
-                    <h3>Data & Tools</h3>
-                    <ul class="tool-list">
-                        <!-- EDIT: List data sources and tools used -->
-                        <li>
-                            <strong>Data Source:</strong> [E.g., "Company database / Public dataset / 
-                            Survey results / System logs"]
-                        </li>
-                        <li>
-                            <strong>Data Size:</strong> [E.g., "1,000 records / 50,000 rows / 
-                            3 months of transaction data"]
-                        </li>
-                        <li>
-                            <strong>Tools Used:</strong> [E.g., "Excel (pivot tables, charts) / 
-                            Python (pandas, matplotlib) / SQL (queries, joins) / Tableau"]
-                        </li>
-                        <li>
-                            <strong>Key Variables:</strong> [E.g., "Customer age, purchase frequency, 
-                            product category, order completion time"]
-                        </li>
-                    </ul>
-                </div>
+                <a href="project-detail.html?id=order-delay" class="project-card fade-in-card" aria-label="View project details for Order Delay">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Strategic Market Entry</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Root-cause snapshot of afternoon shift delays; delivered a simple ops checklist to stabilize throughput.
+                    </p>
+                    <div class="tool-tags">
+                        <span class="tag python">Python</span>
+                        <span class="tag powerbi">Power BI</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a>
 
-                <!-- 3. APPROACH -->
-                <div class="case-study-section">
-                    <h3>Approach</h3>
-                    <p style="margin-bottom: 1rem;">
-                        Steps taken in the analysis process:
+                <!-- <a href="project-detail.html?id=qa-dashboard" class="project-card fade-in-card" aria-label="View project details for QA Dashboard">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">QA Dashboard Starter</h3>
+                    </div>
+                    <p class="project-card-description">
+                        Lightweight QA dashboard to surface defect trends, reopen rates, and cycle time for faster triage.
                     </p>
-                    <ul class="approach-list">
-                        <!-- EDIT: Describe your analysis steps -->
-                        <li>
-                            <strong>Step 1:</strong> Data cleaning and preparation 
-                            [E.g., "Removed duplicates, handled missing values, standardized formats"]
-                        </li>
-                        <li>
-                            <strong>Step 2:</strong> Exploratory Data Analysis (EDA) 
-                            [E.g., "Examined distributions, identified patterns, created visualizations"]
-                        </li>
-                        <li>
-                            <strong>Step 3:</strong> Analysis technique 
-                            [E.g., "Segmentation analysis / Trend analysis / Correlation analysis / 
-                            Comparison between groups"]
-                        </li>
-                        <li>
-                            <strong>Step 4:</strong> Validation and interpretation 
-                            [E.g., "Cross-checked findings, validated assumptions, drew conclusions"]
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 4. KEY INSIGHTS -->
-                <div class="case-study-section">
-                    <h3>Key Insights</h3>
-                    <p style="margin-bottom: 1rem;">
-                        Main findings from the analysis (written in clear, non-technical language):
-                    </p>
-                    <ul class="insight-list">
-                        <!-- EDIT: Write 2-3 key insights in simple language -->
-                        <li>
-                            <strong>Insight 1:</strong> [E.g., "Customers who purchased more than 
-                            3 times in the first month were 60% more likely to stay active after 6 months."]
-                        </li>
-                        <li>
-                            <strong>Insight 2:</strong> [E.g., "Order delays were mostly caused by 
-                            inventory issues in the afternoon shift, not morning processing."]
-                        </li>
-                        <li>
-                            <strong>Insight 3:</strong> [E.g., "Product category X had the highest 
-                            return rate (15%), indicating possible quality or expectation mismatch."]
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 5. RECOMMENDATION / IMPACT -->
-                <div class="case-study-section">
-                    <h3>Recommendation / Impact</h3>
-                    <p>
-                        <!-- EDIT: Suggestions for improvement -->
-                        <strong>Recommendations:</strong><br>
-                        [What actions should be taken based on the insights? 
-                        For example: "Implement a follow-up program for new customers in their first month" 
-                        or "Review inventory management procedures for afternoon shifts."]
-                    </p>
-                    <p>
-                        <strong>Connection to System Quality:</strong><br>
-                        [How does this relate to process or system improvement? 
-                        For example: "This analysis can help identify bottlenecks in the order fulfillment 
-                        process and improve system reliability" or "Findings suggest the need for quality 
-                        checks at certain stages to reduce errors."]
-                    </p>
-                </div>
-
-                <!-- 6. REFLECTION -->
-                <div class="case-study-section">
-                    <h3>Reflection</h3>
-                    <p>
-                        <!-- EDIT: What you learned and limitations -->
-                        <strong>Limitations:</strong><br>
-                        [What were the constraints? For example: "Limited to 3 months of data; 
-                        longer time period could reveal seasonal patterns" or 
-                        "Did not have access to customer feedback data to confirm hypotheses."]
-                    </p>
-                    <p>
-                        <strong>What I Learned:</strong><br>
-                        [Technical and soft skills gained. For example: "Improved my data cleaning skills 
-                        and learned to think critically about data quality" or 
-                        "Understood the importance of validating assumptions before drawing conclusions."]
-                    </p>
-                    <p>
-                        <strong>Future Improvements:</strong><br>
-                        [What would you do differently? For example: "Would include customer survey data 
-                        to get qualitative insights" or "Would automate the reporting process with Python 
-                        scripts."]
-                    </p>
-                </div>
-
-                <!-- Note about having 1 project -->
-                <div class="note">
-                    <strong>Note:</strong> Having one well-documented project is perfectly acceptable 
-                    for internship applications. Quality and depth matter more than quantity. 
-                    A thorough case study demonstrates analytical thinking, communication skills, 
-                    and professional maturity.
-                </div>
+                    <div class="tool-tags">
+                        <span class="tag sql">SQL</span>
+                        <span class="tag tableau">Tableau</span>
+                        <span class="tag qa">QA</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="project-card-cta">View Details →</span>
+                    </div>
+                </a> -->
             </div>
         </div>
     </section>

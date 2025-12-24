@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed project case study - data analysis insights and recommendations.">
+    <title>Project Detail - Alyssa Tifara Yuwono</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========================================
+         HEADER & NAVIGATION
+         ======================================== -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Alyssa <span>Tifara</span></div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================
+         BACK NAVIGATION
+         ======================================== -->
+    <section style="padding: var(--spacing-sm) 0 0;">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PROJECT DETAIL
+         Edit: All sections below
+         ======================================== -->
+    <section style="padding-top: var(--spacing-sm);">
+        <div class="container">
+            <div id="detail-loader" class="detail-loader" role="status" aria-live="polite" aria-label="Loading project details">
+                <div class="spinner"></div>
+                <p>Loading project...</p>
+            </div>
+
+            <div id="detail-shell" hidden>
+                <!-- 1. PROJECT OVERVIEW -->
+                <div class="project-detail-header">
+                    <h1 class="project-detail-title">[Your Project Title Here]</h1>
+                    <div class="project-detail-meta" id="detail-tools"></div>
+                    <p class="project-detail-intro" id="detail-overview"></p>
+                </div>
+
+
+                <!-- WEBSITE PREVIEW (Conditional - SIAkre Only) -->
+                <div id="website-preview" class="website-preview-section" hidden>
+                    <h2 class="website-preview-title">Website Preview</h2>
+                    <div class="website-preview-container">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-skeleton" id="preview-image-skeleton" aria-hidden="true"></div>
+                            <img id="preview-image" class="project-image" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOBILE APP SHOWCASE (Conditional - Studify Only) -->
+                <div id="mobile-showcase" class="mobile-showcase-section" hidden>
+                    <h2 class="mobile-showcase-title">Mobile App Preview</h2>
+                    <div class="mobile-screens-container">
+                        <div class="mobile-frame animate-fade-up delay-1">
+                            <img id="mobile-screen-1" src="" alt="" loading="lazy">
+                        </div>
+                        <div class="mobile-frame animate-fade-up delay-2">
+                            <img id="mobile-screen-2" src="" alt="" loading="lazy">
+                        </div>
+                        <div class="mobile-frame animate-fade-up delay-3">
+                            <img id="mobile-screen-3" src="" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Main Content Container -->
+                <div class="project-detail-content">
+                    <!-- 2. PROBLEM & IMPORTANCE -->
+                    <div class="detail-section" data-section="problem">
+                        <h2 class="detail-section-title">Problem & Importance</h2>
+                        <div class="detail-section-body" id="detail-problem"></div>
+                    </div>
+
+                    <!-- 3. DATA & TOOLS -->
+                    <div class="detail-section" data-section="data-tools">
+                        <h2 class="detail-section-title">Data & Tools</h2>
+                        <div class="detail-section-body" id="detail-data"></div>
+                    </div>
+
+                    <!-- 4. KEY INSIGHTS -->
+                    <div class="detail-section highlight-section" data-section="insights">
+                        <h2 class="detail-section-title">Key Insights</h2>
+                        <div class="detail-section-body" id="detail-insights"></div>
+                    </div>
+
+                    <!-- 5. RECOMMENDATION & IMPACT -->
+                    <div class="detail-section" data-section="recommendation">
+                        <h2 class="detail-section-title">Recommendation & Impact</h2>
+                        <div class="detail-section-body" id="detail-recommendation"></div>
+                    </div>
+
+                    <!-- 6. REFLECTION -->
+                    <div class="detail-section" data-section="reflection">
+                        <h2 class="detail-section-title">Reflection</h2>
+                        <div class="detail-section-body" id="detail-reflection"></div>
+                    </div>
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="project-actions" id="detail-actions"></div>
+
+                <!-- Back to projects -->
+                <div style="text-align: center; margin-top: var(--spacing-lg);">
+                    <a href="projects.html" class="back-link">← Back to All Projects</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alyssa Tifara Yuwono. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
