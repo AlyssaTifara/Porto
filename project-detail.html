@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ========================================
-         HEADER & NAVIGATION
-         ======================================== -->
+    <!-- ====================================
+                HEADER & NAVIGATION
+    ==================================== -->
     <header>
         <div class="container">
             <nav>
@@ -35,18 +35,18 @@
     </header>
 
     <!-- ========================================
-         BACK NAVIGATION
-         ======================================== -->
+                BACK NAVIGATION
+        ======================================== -->
     <section style="padding: var(--spacing-sm) 0 0;">
         <div class="container">
             <a href="projects.html" class="back-link">← Back to Projects</a>
         </div>
     </section>
 
-    <!-- ========================================
-         PROJECT DETAIL
-         Edit: All sections below
-         ======================================== -->
+    <!-- ====================================
+                    PROJECT DETAIL
+            Edit: All sections below
+    ==================================== -->
     <section style="padding-top: var(--spacing-sm);">
         <div class="container">
             <div id="detail-loader" class="detail-loader" role="status" aria-live="polite" aria-label="Loading project details">
@@ -61,7 +61,6 @@
                     <div class="project-detail-meta" id="detail-tools"></div>
                     <p class="project-detail-intro" id="detail-overview"></p>
                 </div>
-
 
                 <!-- WEBSITE PREVIEW (Conditional - SIAkre Only) -->
                 <div id="website-preview" class="website-preview-section" hidden>
@@ -86,6 +85,17 @@
                         </div>
                         <div class="mobile-frame animate-fade-up delay-3">
                             <img id="mobile-screen-3" src="" alt="" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DASHBOARD PREVIEW (Conditional - Airline Pricing Only) -->
+                <div id="dashboard-preview" class="website-preview-section" hidden>
+                    <h2 class="website-preview-title">Dashboard Preview</h2>
+                    <div class="website-preview-container">
+                        <div class="project-image-wrapper">
+                            <div class="project-image-skeleton" id="dashboard-image-skeleton" aria-hidden="true"></div>
+                            <img id="dashboard-image" class="project-image" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -136,9 +146,9 @@
         </div>
     </section>
 
-    <!-- ========================================
-         FOOTER
-         ======================================== -->
+    <!-- ====================================
+                    FOOTER
+        ===================================== -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Alyssa Tifara Yuwono. All rights reserved.</p>

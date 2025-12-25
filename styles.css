@@ -626,6 +626,19 @@ section::before {
     transition: opacity 0.3s ease;
 }
 
+.detail-loader.is-hiding {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: opacity 0.24s ease, max-height 0.28s ease, padding 0.28s ease, margin 0.28s ease;
+}
+
+.detail-loader[hidden] {
+    display: none !important;
+}
+
 .detail-loader .spinner {
     width: 48px;
     height: 48px;
@@ -1189,9 +1202,12 @@ section::before {
 /* === CERTIFICATES === */
 .certificates-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .certificate-item {
@@ -1202,6 +1218,8 @@ section::before {
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
     backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
 }
 
 .certificate-name {
@@ -1219,7 +1237,37 @@ section::before {
 .certificate-learning {
     color: var(--text-gray);
     font-size: 0.95rem;
-    font-style: italic;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.certificate-preview-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.certificate-preview {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.certificate-preview img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-preview:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25);
 }
 
 /* === ABOUT SECTION === */
@@ -1258,8 +1306,8 @@ section::before {
 .contact-links {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
 }
 
 .contact-item {
@@ -1273,12 +1321,20 @@ section::before {
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
     backdrop-filter: blur(6px);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .contact-item:hover {
     background: rgba(159, 139, 255, 0.12);
     transform: translateX(6px);
     box-shadow: var(--glow-soft);
+}
+
+.contact-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
 .contact-icon {

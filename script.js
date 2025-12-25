@@ -10,32 +10,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // ----------------------------------------
     const projectsData = {
         'atm': {
-            'title': 'Sistem Informasi Akreditasi D4 SIB - Politeknik Negeri Malang',
-            'overview': 'Mengembangkan sistem web terintegrasi untuk mengelola proses akreditasi program studi dengan alur validasi bertingkat dari dosen hingga direktur, dilengkapi dengan fitur pengelolaan data dosen, pengisian kriteria, validasi multi-level, dan ekspor dokumen otomatis.',
-            'tools': ['Laravel 10', 'Bootstrap 5', 'MySQL', 'Figma', 'DB Diagram'],
-            'problem': 'Proses akreditasi manual yang tidak terstruktur menyebabkan kesulitan dalam pengelolaan data, validasi berjenjang, dan pembuatan dokumen borang akreditasi secara efisien dan tepat waktu.',
-            'dataTools': {
-                'source': 'Data dosen, kriteria akreditasi 1-9, dokumen pendukung, riwayat validasi',
-                'tools': 'MySQL, Laravel Eloquent, PHP, Blade Templating',
-                'variables': 'Role pengguna, status validasi, komentar revisi, tanggal pengisian, dokumen lampiran'
-            },
-            'insights': [
-                'Struktur validasi bertingkat (Koordinator → KPS/KAJUR → KJM → Direktur/SPI) efektif dalam menjaga kualitas data akreditasi.',
-                'Penggunaan notifikasi real-time untuk komentar revisi mempercepat proses perbaikan data oleh dosen pengisi.',
-                'Export otomatis ke PDF setelah validasi final menyederhanakan pembuatan dokumen borang akreditasi.'
+            title: 'Sistem Informasi Akreditasi D4 SIB – Politeknik Negeri Malang',
+            overview:
+                'Sistem web terintegrasi untuk mendukung proses akreditasi program studi melalui pengelolaan data dosen, pengisian kriteria akreditasi, validasi bertingkat, serta pembuatan dokumen borang secara terstruktur.',
+            tools: [
+                'Laravel 10',
+                'Bootstrap 5',
+                'MySQL',
+                'System Analysis',
+                'Documentation'
             ],
-            'recommendation': {
-                'actions': 'Optimalkan tampilan mobile-responsive, tambahkan fitur penjadwalan otomatis untuk update data periodik, dan integrasi dengan sistem P3M untuk sinkronisasi data penelitian.',
-                'impact': 'Proses akreditasi lebih efisien, dokumentasi lebih terstruktur, dan pengalaman pengguna lebih baik di berbagai perangkat.'
+            problem:
+                'Proses akreditasi sebelumnya dilakukan secara manual dan terpisah, menyebabkan data sulit dikelola, validasi berjenjang tidak terdokumentasi dengan baik, serta pembuatan dokumen borang memakan waktu.',
+            dataTools: {
+                source:
+                'Data dosen, kriteria akreditasi (1–9), dokumen pendukung, status validasi',
+                tools:
+                'MySQL, Laravel Eloquent, PHP, Blade Template',
+                variables:
+                'Role pengguna, status validasi, komentar revisi, dokumen lampiran'
             },
-            'reflection': {
-                'limitations': 'Tampilan belum sepenuhnya responsive untuk mobile, integrasi dengan sistem eksternal masih terbatas.',
-                'learned': 'Pentingnya alur bisnis yang jelas dalam sistem multi-role dan value dari validasi bertahap untuk menjaga kualitas data.',
-                'future': 'Pengembangan mobile app, integrasi API dengan sistem akademik kampus, dan penambahan dashboard analitik untuk monitoring progres.'
+            insights: [
+                'Validasi bertingkat membantu menjaga kualitas dan konsistensi data akreditasi.',
+                'Struktur role yang jelas mempermudah alur persetujuan antar pihak.',
+                'Ekspor dokumen otomatis mengurangi kesalahan manual dalam penyusunan borang.'
+            ],
+            recommendation: {
+                actions:
+                'Meningkatkan responsivitas tampilan mobile dan menambahkan dashboard monitoring progres akreditasi.',
+                impact:
+                'Proses akreditasi menjadi lebih efisien, terdokumentasi, dan mudah dipantau.'
+            },
+            reflection: {
+                limitations:
+                'Tampilan mobile belum sepenuhnya optimal dan integrasi sistem eksternal masih terbatas.',
+                learned:
+                'Pentingnya pemahaman alur bisnis dan dokumentasi sistem pada aplikasi multi-role.',
+                future:
+                'Integrasi dengan sistem akademik kampus dan pengembangan dashboard analitik.'
             },
             image: {
                 src: 'assets/images/projects/akre/1752500344214.jpg',
-                alt: 'Final UI dashboard Sistem Informasi Akreditasi D4 SIB'
+                alt: 'Dashboard Sistem Informasi Akreditasi'
             },
             links: {
                 github: 'https://github.com/alfinafriansyah/PBL_Akreditasi',
@@ -43,28 +59,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         'retention': {
-            'title': 'Studify Mobile',
-            'overview': 'Mengembangkan sistem web terintegrasi untuk mengelola proses akreditasi program studi dengan alur validasi bertingkat dari dosen hingga direktur, dilengkapi dengan fitur pengelolaan data dosen, pengisian kriteria, validasi multi-level, dan ekspor dokumen otomatis.',
-            'tools': ['Laravel 10', 'Bootstrap 5', 'MySQL', 'Figma', 'DB Diagram', 'QA Testing'],
-            'problem': 'Proses akreditasi manual yang tidak terstruktur menyebabkan kesulitan dalam pengelolaan data, validasi berjenjang, dan pembuatan dokumen borang akreditasi secara efisien dan tepat waktu.',
-            'dataTools': {
-                'source': 'Data dosen, kriteria akreditasi 1-9, dokumen pendukung, riwayat validasi',
-                'tools': 'MySQL, Laravel Eloquent, PHP, Blade Templating',
-                'variables': 'Role pengguna, status validasi, komentar revisi, tanggal pengisian, dokumen lampiran'
-            },
-            'insights': [
-                'Struktur validasi bertingkat (Koordinator → KPS/KAJUR → KJM → Direktur/SPI) efektif dalam menjaga kualitas data akreditasi.',
-                'Penggunaan notifikasi real-time untuk komentar revisi mempercepat proses perbaikan data oleh dosen pengisi.',
-                'Export otomatis ke PDF setelah validasi final menyederhanakan pembuatan dokumen borang akreditasi.'
+            title: 'Studify Mobile – Class Scheduler',
+            overview:
+                'Aplikasi mobile untuk membantu pengelolaan jadwal perkuliahan secara terpusat melalui fitur pembuatan kelas, pembagian peran, pengelolaan jadwal, serta notifikasi otomatis.',
+            tools: [
+                'Flutter',
+                'Laravel',
+                'MySQL',
+                'Firebase Cloud Messaging',
+                'System Analysis',
+                'Documentation',
+                'Figma (design collaboration)'
             ],
-            'recommendation': {
-                'actions': 'Optimalkan tampilan mobile-responsive, tambahkan fitur penjadwalan otomatis untuk update data periodik, dan integrasi dengan sistem P3M untuk sinkronisasi data penelitian.',
-                'impact': 'Proses akreditasi lebih efisien, dokumentasi lebih terstruktur, dan pengalaman pengguna lebih baik di berbagai perangkat.'
+            problem:
+                'Pengelolaan jadwal kuliah yang dilakukan melalui grup chat sering menyebabkan informasi tercecer, perubahan jadwal terlewat, dan miskomunikasi antar anggota kelas.',
+            dataTools: {
+                source:
+                'Data pengguna, kelas, jadwal kuliah, notifikasi',
+                tools:
+                'Laravel REST API, MySQL, Flutter, Firebase FCM',
+                variables:
+                'Role pengguna, jadwal, waktu notifikasi, status kelas'
             },
-            'reflection': {
-                'limitations': 'Tampilan belum sepenuhnya responsive untuk mobile, integrasi dengan sistem eksternal masih terbatas.',
-                'learned': 'Pentingnya alur bisnis yang jelas dalam sistem multi-role dan value dari validasi bertahap untuk menjaga kualitas data.',
-                'future': 'Pengembangan mobile app, integrasi API dengan sistem akademik kampus, dan penambahan dashboard analitik untuk monitoring progres.'
+            insights: [
+                'Aplikasi terpusat membantu mengurangi miskomunikasi jadwal.',
+                'Notifikasi otomatis mempermudah penyebaran informasi perubahan jadwal.',
+                'Dokumentasi use case dan flow sistem membantu pengembangan fitur berjalan terarah.'
+            ],
+            recommendation: {
+                actions:
+                'Menambahkan integrasi kalender dan peningkatan UI berdasarkan feedback pengguna.',
+                impact:
+                'Koordinasi akademik menjadi lebih rapi dan efisien.'
+            },
+            reflection: {
+                limitations:
+                'Belum terintegrasi dengan sistem akademik kampus dan hanya tersedia untuk Android.',
+                learned:
+                'Pentingnya dokumentasi sistem (use case, flow, ERD) dalam proyek aplikasi tim.',
+                future:
+                'Pengembangan fitur tambahan seperti tugas, absensi, dan integrasi sistem kampus.'
             },
             image: {
                 src: 'assets/images/projects/studify/photo_2025-12-24_22-04-23.jpg',
@@ -92,32 +126,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         'order-delay': {
-            title: 'Strategic Market Entry',
-            overview: 'Root-cause snapshot of afternoon shift delays; delivered a simple ops checklist to stabilize throughput.',
-            tools: ['Power BI', 'Python'],
-            problem: 'Afternoon shift orders were consistently late, hurting SLA and customer satisfaction.',
+            title: 'Airline Pricing Analysis – Market Entry Strategy',
+            overview:
+                'Analisis data harga tiket penerbangan domestik India untuk memahami pola harga, segmentasi maskapai, dan peluang strategi masuk pasar.',
+            tools: [
+                'Power BI',
+                'Python',
+                'Pandas',
+                'Data Visualization',
+                'Statistical Analysis'
+            ],
+            problem:
+                'Kurangnya pemahaman terhadap pola harga dan segmentasi pasar menyebabkan strategi penetapan harga kurang optimal.',
             dataTools: {
-                source: 'Order logs, staffing roster, incident notes',
-                tools: 'Python, Power BI',
-                variables: 'Order timestamps, queue depth, staff coverage, incident flags'
+                source:
+                'Data harga tiket penerbangan domestik India',
+                tools:
+                'Power BI, Python (Pandas), Excel',
+                variables:
+                'Harga tiket, maskapai, rute, kelas penerbangan, waktu'
             },
             insights: [
-                'Delays spike when staffing dips after lunch and queue depth passes threshold.',
-                'Most rework stems from incomplete handoff notes between shifts.',
-                'Simple checklists reduced re-opened tickets in pilot runs.'
+                'Maskapai low-cost dan full-service memiliki segmentasi harga yang sangat jelas.',
+                'Harga tiket dipengaruhi oleh musim dan rute bisnis.',
+                'Segmentasi pasar berperan besar dalam strategi pricing.'
             ],
             recommendation: {
-                actions: 'Align staffing to peak windows, enforce checklist at handoff, and monitor queue threshold alerts.',
-                impact: 'Shorter cycle times, fewer reopens, and steadier SLA compliance.'
+                actions:
+                'Mengoptimalkan strategi dynamic pricing berdasarkan musim dan rute.',
+                impact:
+                'Potensi peningkatan revenue dan positioning pasar yang lebih kuat.'
             },
             reflection: {
-                limitations: 'Limited to 4 weeks of logs; no seasonality view.',
-                learned: 'Operational guardrails (checklists, staffing cues) beat tooling alone.',
-                future: 'Add lightweight dashboard to track queue and handoff compliance.'
+                limitations:
+                'Analisis terbatas pada data historis tanpa mempertimbangkan biaya operasional.',
+                learned:
+                'Pentingnya visualisasi data dalam pengambilan keputusan bisnis.',
+                future:
+                'Pengembangan model prediksi harga dan analisis rute internasional.'
             },
-            image: null,
+            image: {
+                src: 'assets/images/projects/kecbis/dashboard_2.jpg',
+                alt: 'Power BI Airline Pricing Dashboard'
+            },
             links: {
-                // github: 'https://github.com/igaramadana/PWD_PBLSITatib',
                 report: 'assets/documents/projects/kecbis/UAS Kecbis_Kel 7.pdf'
             }
         },
@@ -256,22 +308,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const imageSkeleton = document.getElementById('detail-image-skeleton');
         const projectHero = document.getElementById('project-hero');
         const mobileShowcase = document.getElementById('mobile-showcase');
+        const dashboardPreview = document.getElementById('dashboard-preview');
+        const dashboardImage = document.getElementById('dashboard-image');
+        const dashboardSkeleton = document.getElementById('dashboard-image-skeleton');
 
         // ===== 3. HELPER FUNCTIONS =====
         
         // Fungsi untuk menyembunyikan loader dan menampilkan konten
         const hideLoader = () => {
             if (loaderEl) {
-                loaderEl.style.opacity = '0';
+                loaderEl.classList.add('is-hiding');
                 setTimeout(() => {
                     loaderEl.hidden = true;
-                }, 300);
+                    loaderEl.style.display = 'none';
+                }, 280);
             }
         };
 
         const showContent = () => {
             if (shellEl) {
                 shellEl.hidden = false;
+                shellEl.style.display = 'block';
                 shellEl.style.opacity = '0';
                 setTimeout(() => {
                     shellEl.style.transition = 'opacity 0.4s ease';
@@ -478,6 +535,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     mobileShowcase.hidden = false;
                 } else {
                     mobileShowcase.hidden = true;
+                }
+            }
+
+            // ===== 8B. HANDLE DASHBOARD PREVIEW (Airline Pricing only) =====
+            if (dashboardPreview) {
+                if (projectId === 'order-delay' && project.image && project.image.src) {
+                    const altText = project.image.alt || `${project.title} dashboard`;
+                    dashboardImage.alt = altText;
+                    dashboardImage.src = project.image.src;
+
+                    const revealDashboard = () => {
+                        dashboardImage.classList.add('is-visible');
+                        dashboardImage.hidden = false;
+                        if (dashboardSkeleton) dashboardSkeleton.style.display = 'none';
+                    };
+
+                    dashboardImage.addEventListener('load', revealDashboard, { once: true });
+                    
+                    // Error handling untuk dashboard image
+                    dashboardImage.addEventListener('error', () => {
+                        console.warn(`Failed to load dashboard image: ${project.image.src}`);
+                        dashboardPreview.hidden = true;
+                        if (dashboardSkeleton) dashboardSkeleton.style.display = 'none';
+                    }, { once: true });
+
+                    // Jika gambar sudah di-cache
+                    if (dashboardImage.complete && dashboardImage.naturalWidth > 0) {
+                        revealDashboard();
+                    }
+
+                    dashboardPreview.hidden = false;
+                } else {
+                    dashboardPreview.hidden = true;
                 }
             }
 
