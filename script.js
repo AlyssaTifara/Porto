@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Laravel 10',
                 'Bootstrap 5',
                 'MySQL',
-                'System Analysis',
-                'Documentation'
+                'Analisis Sistem',
+                'Dokumentasi Sistem',
             ],
             problem:
                 'Proses akreditasi sebelumnya dilakukan secara manual dan terpisah, menyebabkan data sulit dikelola, validasi berjenjang tidak terdokumentasi dengan baik, serta pembuatan dokumen borang memakan waktu.',
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Laravel',
                 'MySQL',
                 'Firebase Cloud Messaging',
-                'System Analysis',
-                'Documentation',
+                'Analisis Sistem',
+                'Dokumentasi Sistem',
                 'Figma (design collaboration)'
             ],
             problem:
@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Power BI',
                 'Python',
                 'Pandas',
-                'Data Visualization',
-                'Statistical Analysis'
+                'Data Visualisasi',
+                'Analisis Statistik'
             ],
             problem:
                 'Kurangnya pemahaman terhadap pola harga dan segmentasi pasar menyebabkan strategi penetapan harga kurang optimal.',
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div>
                             <h2>${title}</h2>
                             <p style="color: var(--text-gray); margin: 1rem 0 2rem;">${message}</p>
-                            <a href="projects.html" class="btn btn-primary">← Back to Projects</a>
+                            <a href="projects.html" class="btn btn-primary">← Kembali ke Proyek</a>
                         </div>
                     </div>
                 `;
@@ -357,20 +357,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // ===== 4. VALIDASI PROJECT ID =====
         if (!projectId) {
-            showErrorPage('No Project Selected', 'Please select a project to view its details.');
+            showErrorPage('Tidak Ada Proyek yang Dipilih', 'Silakan pilih proyek untuk melihat detailnya.');
             return;
         }
 
         const project = projectsData[projectId];
         if (!project) {
-            showErrorPage('Project Not Found', 'The project you are looking for does not exist or has been removed.');
+            showErrorPage('Proyek Tidak Ditemukan', 'Proyek yang Anda cari tidak ada atau telah dihapus.');
             return;
         }
 
         // Validasi elemen DOM yang diperlukan
         if (!titleEl || !toolsEl || !overviewEl) {
             console.error('Required DOM elements not found');
-            showErrorPage('Page Error', 'Unable to load project details. Please try again.');
+            showErrorPage('Kesalahan Halaman', 'Tidak dapat memuat detail proyek. Silakan coba lagi.');
             return;
         }
 
@@ -400,9 +400,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dataEl) {
                 dataEl.innerHTML = `
                     <ul class="detail-list">
-                        <li><strong>Data Source:</strong> ${project.dataTools.source}</li>
+                        <li><strong>Sumber Data:</strong> ${project.dataTools.source}</li>
                         <li><strong>Tools:</strong> ${project.dataTools.tools}</li>
-                        <li><strong>Key Variables:</strong> ${project.dataTools.variables}</li>
+                        <li><strong>Variabel Utama:</strong> ${project.dataTools.variables}</li>
                     </ul>
                 `;
             }
@@ -420,8 +420,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (recoEl) {
                 recoEl.innerHTML = `
                     <ul class="detail-list">
-                        <li><strong>Actions:</strong> ${project.recommendation.actions}</li>
-                        <li><strong>Impact:</strong> ${project.recommendation.impact}</li>
+                        <li><strong>Tindakan:</strong> ${project.recommendation.actions}</li>
+                        <li><strong>Dampak:</strong> ${project.recommendation.impact}</li>
                     </ul>
                 `;
             }
@@ -430,9 +430,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (reflectionEl) {
                 reflectionEl.innerHTML = `
                     <ul class="detail-list">
-                        <li><strong>Limitations:</strong> ${project.reflection.limitations}</li>
-                        <li><strong>What I Learned:</strong> ${project.reflection.learned}</li>
-                        <li><strong>Future Improvement:</strong> ${project.reflection.future}</li>
+                        <li><strong>Keterbatasan:</strong> ${project.reflection.limitations}</li>
+                        <li><strong>Yang Saya Pelajari:</strong> ${project.reflection.learned}</li>
+                        <li><strong>Perbaikan Masa Depan:</strong> ${project.reflection.future}</li>
                     </ul>
                 `;
             }
@@ -585,10 +585,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 
                 if (project.links.github) {
-                    actionsEl.appendChild(makeBtn(project.links.github, 'View Code on GitHub', 'btn-primary'));
+                    actionsEl.appendChild(makeBtn(project.links.github, 'Lihat Kode di GitHub', 'btn-primary'));
                 }
                 if (project.links.report) {
-                    actionsEl.appendChild(makeBtn(project.links.report, 'View Full Report (PDF)', 'btn-secondary'));
+                    actionsEl.appendChild(makeBtn(project.links.report, 'Lihat Laporan Lengkap (PDF)', 'btn-secondary'));
                 }
             }
 
@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         } catch (error) {
             console.error('Error rendering project details:', error);
-            showErrorPage('Loading Error', 'An error occurred while loading the project details. Please try again.');
+            showErrorPage('Kesalahan Pemuatan', 'Terjadi kesalahan saat memuat detail proyek. Silakan coba lagi.');
         }
     }
     

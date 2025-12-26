@@ -1398,8 +1398,15 @@ footer p {
         font-size: 1rem;
     }
 
-    /* Hero grid layout on mobile */
+    /* CRITICAL FIX: Hero section layout - explicitly define single column grid
+       Prevents layout shift and ensures proper stacking on mobile */
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+    }
+
     .hero .container > div {
+        display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
     }
@@ -1409,7 +1416,8 @@ footer p {
         height: 250px;
     }
     
-    /* Navigation */
+    /* CRITICAL FIX: Mobile navigation - explicit flex behavior
+       Ensures menu toggle and nav-links work together without conflicts */
     .menu-toggle {
         display: flex;
     }
@@ -1426,6 +1434,10 @@ footer p {
         display: none;
         gap: 0;
         border: 1px solid var(--border-color);
+        z-index: 999;
+        /* Prevent nav from pushing content on iOS */
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
     
     .nav-links.active {
@@ -1437,6 +1449,45 @@ footer p {
         text-align: center;
         padding: 0.75rem 0;
         border-bottom: 1px solid var(--border-color);
+    }
+
+    /* PERFORMANCE FIX: Reduce blur/backdrop-filter on mobile
+       Improves scrolling performance and battery life on mobile devices */
+    header {
+        backdrop-filter: blur(6px);
+    }
+
+    /* Remove heavy blur from decoration pseudo-elements */
+    body::before {
+        filter: blur(30px);
+    }
+
+    section::before {
+        filter: blur(25px);
+        opacity: 0.5;
+    }
+
+    .hero::after {
+        filter: blur(6px);
+    }
+
+    .hero::before {
+        filter: blur(8px);
+    }
+
+    .stat-card {
+        backdrop-filter: blur(6px);
+    }
+
+    .card {
+        backdrop-filter: blur(4px);
+    }
+
+    .project-card,
+    .skill-category,
+    .certificate-item,
+    .contact-item {
+        backdrop-filter: blur(4px);
     }
     
     /* Project preview grid on mobile */
@@ -1492,13 +1543,45 @@ footer p {
         grid-template-columns: 1fr;
     }
     
-    /* Spacing */
+    /* CRITICAL FIX: Section spacing - reduce padding for better mobile spacing
+       Prevents excessive whitespace on small screens */
     section {
         padding: var(--spacing-md) 0;
     }
-    
+
+    /* CRITICAL FIX: Avoid buggy 100vh on mobile
+       Use calc with safe fallback to ensure proper viewport height */
     .hero {
-        min-height: calc(100vh - 60px);
+        /* Remove min-height: calc(100vh - 80px) - causes issues on mobile browsers */
+        /* Use auto padding instead for flexible height */
+    }
+
+    /* PERFORMANCE FIX: Reduce shadow complexity on mobile */
+    .stat-card:hover {
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+    }
+
+    .project-card:hover {
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+    }
+
+    /* ACCESSIBILITY FIX: Ensure nav links are easily tappable
+       Minimum touch target size is 44x44px */
+    .nav-links li a {
+        padding: 0.75rem 1rem;
+        display: block;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links li a::after {
+        bottom: -10px;
     }
 }
 
@@ -1512,6 +1595,74 @@ footer p {
     
     .hero-title {
         font-size: 1.75rem;
+    }
+
+    /* CRITICAL FIX: Further reduce blur on very small screens
+       Very small devices have limited GPU resources */
+    header {
+        backdrop-filter: blur(4px);
+    }
+
+    body::before {
+        filter: blur(20px);
+        opacity: 0.4;
+    }
+
+    section::before {
+        filter: blur(20px);
+        opacity: 0.35;
+    }
+
+    /* CRITICAL FIX: Reduce decorative element sizes on mobile
+       Prevents layout issues and improves rendering performance */
+    .stats-section::before {
+        width: 300px;
+        height: 200px;
+        left: -150px;
+    }
+
+    .stats-section::after {
+        width: 250px;
+        height: 150px;
+        right: -125px;
+    }
+
+    /* CRITICAL FIX: Adjust profile photo on small screens */
+    .profile-photo-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* PERFORMANCE FIX: Disable hover transforms on touch devices
+       Touch devices don't benefit from hover, saves rendering cycles */
+    .stat-card:hover {
+        transform: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    /* Reduce padding for compact mobile layout */
+    section {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .detail-section {
+        padding: var(--spacing-sm);
+    }
+
+    /* Stack stats vertically with proper spacing */
+    .stats-grid {
+        gap: var(--spacing-xs);
+    }
+
+    .stat-card {
+        padding: var(--spacing-xs);
     }
 }
 
@@ -1614,3 +1765,160 @@ footer p {
     animation: fadeInUp 0.5s ease-out;
     animation-delay: 0.4s;
 }
+
+/* ========================================
+    STATISTICS SECTION - QUICK OVERVIEW
+======================================== */
+.stats-section {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(140deg, rgba(16, 26, 52, 0.4), rgba(16, 23, 44, 0.4));
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 60%);
+    border-radius: 50%;
+    top: 50%;
+    left: -100px;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stats-section::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.04), transparent 60%);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -80px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.stat-card:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--cyan-400), var(--purple-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+}
+
+.stat-description {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .stat-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+    .stats-section {
+        padding: var(--spacing-md) 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+        padding: var(--spacing-sm);
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+    }
+
+    .stat-description {
+        font-size: 0.85rem;
+    }
+}
+
