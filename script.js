@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'atm': {
             title: 'Sistem Informasi Akreditasi D4 SIB – Politeknik Negeri Malang',
             overview:
-                'Sistem web terintegrasi untuk mendukung proses akreditasi program studi melalui pengelolaan data dosen, pengisian kriteria akreditasi, validasi bertingkat, serta pembuatan dokumen borang secara terstruktur.',
+                'Sistem terintegrasi untuk mengonsolidasikan data akreditasi PS, memformalkan alur validasi bertingkat, dan menghasilkan borang otomatis demi efisiensi, akurasi, dan ketertelusuran proses.',
             tools: [
                 'Laravel 10',
                 'Bootstrap 5',
@@ -21,33 +21,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Dokumentasi Sistem',
             ],
             problem:
-                'Proses akreditasi sebelumnya dilakukan secara manual dan terpisah, menyebabkan data sulit dikelola, validasi berjenjang tidak terdokumentasi dengan baik, serta pembuatan dokumen borang memakan waktu.',
+                'Proses manual dan data yang tersebar membuat pengelolaan sulit, validasi berjenjang tidak terekam konsisten, dan penyusunan borang memakan waktu tinggi dengan risiko inkonsistensi.',
             dataTools: {
                 source:
-                'Data dosen, kriteria akreditasi (1–9), dokumen pendukung, status validasi',
+                'Data dosen, kriteria akreditasi (1–9), dokumen pendukung, status validasi & catatan revisi',
                 tools:
-                'MySQL, Laravel Eloquent, PHP, Blade Template',
+                'MySQL, Laravel 10 (Eloquent/Blade), PHP, Bootstrap',
                 variables:
-                'Role pengguna, status validasi, komentar revisi, dokumen lampiran'
+                'Role pengguna, tingkat validasi, komentar revisi, lampiran, progres borang'
             },
             insights: [
-                'Validasi bertingkat membantu menjaga kualitas dan konsistensi data akreditasi.',
-                'Struktur role yang jelas mempermudah alur persetujuan antar pihak.',
-                'Ekspor dokumen otomatis mengurangi kesalahan manual dalam penyusunan borang.'
+                'Validasi bertingkat menaikkan kualitas dan konsistensi data akreditasi.',
+                'Peran/otorisasi yang jelas memperlancar alur persetujuan antar pihak.',
+                'Otomasi ekspor borang menekan kesalahan manual dan mempercepat penyusunan dokumen.'
             ],
             recommendation: {
                 actions:
-                'Meningkatkan responsivitas tampilan mobile dan menambahkan dashboard monitoring progres akreditasi.',
+                'Tambahkan dashboard progres & notifikasi; tingkatkan responsivitas tampilan mobile.',
                 impact:
-                'Proses akreditasi menjadi lebih efisien, terdokumentasi, dan mudah dipantau.'
+                'Lead time akreditasi turun, akurasi borang naik, dan tracking menjadi lebih mudah.'
             },
             reflection: {
                 limitations:
-                'Tampilan mobile belum sepenuhnya optimal dan integrasi sistem eksternal masih terbatas.',
+                'Integrasi eksternal terbatas dan tampilan mobile belum sepenuhnya optimal.',
                 learned:
-                'Pentingnya pemahaman alur bisnis dan dokumentasi sistem pada aplikasi multi-role.',
+                'Pemetaan alur bisnis serta dokumentasi sistem adalah kunci pada aplikasi multi-role.',
                 future:
-                'Integrasi dengan sistem akademik kampus dan pengembangan dashboard analitik.'
+                'Integrasi ke sistem akademik kampus dan penambahan analitik progres.'
             },
             image: {
                 src: 'assets/images/projects/akre/1752500344214.jpg',
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'retention': {
             title: 'Studify Mobile – Class Scheduler',
             overview:
-                'Aplikasi mobile untuk membantu pengelolaan jadwal perkuliahan secara terpusat melalui fitur pembuatan kelas, pembagian peran, pengelolaan jadwal, serta notifikasi otomatis.',
+                'Aplikasi mobile untuk pengelolaan jadwal perkuliahan terpusat: pembuatan kelas, pembagian peran, pengaturan jadwal, dan notifikasi otomatis guna mengurangi miskomunikasi.',
             tools: [
                 'Flutter',
                 'Laravel',
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Figma (design collaboration)'
             ],
             problem:
-                'Pengelolaan jadwal kuliah yang dilakukan melalui grup chat sering menyebabkan informasi tercecer, perubahan jadwal terlewat, dan miskomunikasi antar anggota kelas.',
+                'Koordinasi jadwal melalui grup chat menyebabkan informasi tercecer, perubahan jadwal terlewat, dan miskomunikasi antar anggota kelas.',
             dataTools: {
                 source:
                 'Data pengguna, kelas, jadwal kuliah, notifikasi',
@@ -82,23 +82,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Role pengguna, jadwal, waktu notifikasi, status kelas'
             },
             insights: [
-                'Aplikasi terpusat membantu mengurangi miskomunikasi jadwal.',
-                'Notifikasi otomatis mempermudah penyebaran informasi perubahan jadwal.',
-                'Dokumentasi use case dan flow sistem membantu pengembangan fitur berjalan terarah.'
+                'Satu sumber informasi mengurangi miskomunikasi jadwal dan duplikasi pesan.',
+                'Notifikasi otomatis meningkatkan kepatuhan terhadap perubahan jadwal.',
+                'Dokumentasi use case/flow menjaga pengembangan fitur berjalan terarah dan dapat dipelihara.'
             ],
             recommendation: {
                 actions:
-                'Menambahkan integrasi kalender dan peningkatan UI berdasarkan feedback pengguna.',
+                'Integrasi kalender (sinkronisasi) dan peningkatan UI berbasis feedback pengguna.',
                 impact:
-                'Koordinasi akademik menjadi lebih rapi dan efisien.'
+                'Koordinasi akademik lebih rapi, efisien, dan on-time.'
             },
             reflection: {
                 limitations:
                 'Belum terintegrasi dengan sistem akademik kampus dan hanya tersedia untuk Android.',
                 learned:
-                'Pentingnya dokumentasi sistem (use case, flow, ERD) dalam proyek aplikasi tim.',
+                'Dokumentasi sistem (use case, flow, ERD) krusial untuk kolaborasi tim dan ketertelusuran.',
                 future:
-                'Pengembangan fitur tambahan seperti tugas, absensi, dan integrasi sistem kampus.'
+                'Fitur lanjutan seperti tugas, absensi, dan integrasi ke sistem kampus.'
             },
             image: {
                 src: 'assets/images/projects/studify/photo_2025-12-24_22-04-23.jpg',
@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         'order-delay': {
-            title: 'Airline Pricing Analysis – Market Entry Strategy',
+            title: 'Analisis Harga Maskapai – Strategi Masuk Pasar',
             overview:
-                'Analisis data harga tiket penerbangan domestik India untuk memahami pola harga, segmentasi maskapai, dan peluang strategi masuk pasar.',
+                'Analisis harga tiket penerbangan domestik India menggunakan EDA untuk mengidentifikasi pola harga, segmentasi maskapai, dan peluang strategi masuk pasar.',
             tools: [
                 'Power BI',
                 'Python',
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Analisis Statistik'
             ],
             problem:
-                'Kurangnya pemahaman terhadap pola harga dan segmentasi pasar menyebabkan strategi penetapan harga kurang optimal.',
+                'Kurangnya pemahaman pola harga dan segmentasi pasar menghambat penetapan harga yang kompetitif dan berkelanjutan.',
             dataTools: {
                 source:
                 'Data harga tiket penerbangan domestik India',
@@ -147,23 +147,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Harga tiket, maskapai, rute, kelas penerbangan, waktu'
             },
             insights: [
-                'Maskapai low-cost dan full-service memiliki segmentasi harga yang sangat jelas.',
-                'Harga tiket dipengaruhi oleh musim dan rute bisnis.',
-                'Segmentasi pasar berperan besar dalam strategi pricing.'
+                'Segmentasi harga antara low-cost dan full-service terlihat jelas dan stabil.',
+                'Harga dipengaruhi musim (seasonality) dan rute bisnis utama.',
+                'Pemosisian produk & segmen pasar menentukan strategi pricing yang efektif.'
             ],
             recommendation: {
                 actions:
-                'Mengoptimalkan strategi dynamic pricing berdasarkan musim dan rute.',
+                'Optimalkan dynamic pricing berbasis musim & rute; monitor KPI harga per segmen.',
                 impact:
-                'Potensi peningkatan revenue dan positioning pasar yang lebih kuat.'
+                'Peningkatan revenue potensial dan penguatan positioning pasar.'
             },
             reflection: {
                 limitations:
-                'Analisis terbatas pada data historis tanpa mempertimbangkan biaya operasional.',
+                'Analisis berbasis data historis tanpa komponen biaya operasional.',
                 learned:
-                'Pentingnya visualisasi data dalam pengambilan keputusan bisnis.',
+                'Visualisasi dan segmentasi data mempercepat pengambilan keputusan bisnis.',
                 future:
-                'Pengembangan model prediksi harga dan analisis rute internasional.'
+                'Model prediksi harga dan perluasan analisis ke rute internasional.'
             },
             image: {
                 src: 'assets/images/projects/kecbis/dashboard_2.jpg',
