@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             reflection: {
                 limitations:
-                'Belum terintegrasi dengan sistem akademik kampus dan hanya tersedia untuk Android.',
+                'Belum terintegrasi dengan sistem akademik kampus karena aplikasi dirancang sebagai solusi mandiri untuk mahasiswa.',
                 learned:
-                'Dokumentasi sistem (use case, flow, ERD) krusial untuk kolaborasi tim dan ketertelusuran.',
+                'Dokumentasi sistem (use case, flow, dan ERD) terbukti krusial untuk menjaga kolaborasi tim dan konsistensi pengembangan.',
                 future:
-                'Fitur lanjutan seperti tugas, absensi, dan integrasi ke sistem kampus.'
+                'Pengembangan fitur lanjutan seperti manajemen tugas, absensi, serta opsi integrasi dengan sistem kampus.'
             },
             image: {
                 src: 'assets/images/projects/studify/photo_2025-12-24_22-04-23.jpg',
