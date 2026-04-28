@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'm111': {
             title: 'Dashboard Analitik Operasional Event – M111 Ngalam Folding Bike',
             overview:
-                'Pipeline data dan dashboard Power BI untuk memantau distribusi peserta dan alur registrasi 500+ catatan secara real-time selama event sepeda lipat pemerintah berlangsung.',
+                'Pipeline transformasi data dan dashboard Power BI untuk memantau distribusi peserta dan KPI operasional event — mencakup pembersihan, standarisasi, dan penggabungan data dari tiga sumber operasional (500+ catatan).',
             tools: [
                 'Power BI',
                 'Power Query',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Data Pipeline'
             ],
             problem:
-                'Data registrasi peserta mentah dari 3 sumber operasional berbeda memerlukan pembersihan, standarisasi, dan transformasi sebelum dapat digunakan untuk pengambilan keputusan real-time.',
+                'Data registrasi peserta dari tiga sumber operasional berbeda memiliki format tidak konsisten, nilai kosong, dan entri duplikat yang menghambat pelaporan akurat selama event berlangsung.',
             dataTools: {
                 source:
                 'Data registrasi peserta event M111 Ngalam Folding Bike (500+ catatan, 3 sumber operasional)',
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Distribusi peserta, status registrasi, kupon subsidi, KPI operasional event'
             },
             insights: [
-                'Normalisasi entri tidak konsisten dari 3 sumber sumber berhasil menghasilkan dataset terpadu yang siap analitik.',
-                'Kolom kalkulasi turunan mempercepat derivasi KPI tanpa modifikasi data sumber.',
-                'Dashboard real-time mendukung keputusan operasional langsung selama event berlangsung.'
+                'Standarisasi entri dari tiga sumber menghasilkan dataset terpadu yang siap digunakan untuk pelaporan KPI.',
+                'Kolom kalkulasi turunan memungkinkan derivasi metrik tanpa mengubah data sumber asli.',
+                'Dashboard Power BI memungkinkan pemantauan distribusi peserta secara langsung oleh tim operasional event.'
             ],
             recommendation: {
                 actions:
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'retention': {
             title: 'Studify Mobile – Class Scheduler',
             overview:
-                'Aplikasi mobile untuk pengelolaan jadwal perkuliahan terpusat: pembuatan kelas, pembagian peran, pengaturan jadwal, dan notifikasi otomatis guna mengurangi miskomunikasi.',
+                'Aplikasi penjadwalan akademik lintas platform: desain skema MySQL multi-entitas, REST API Laravel untuk pertukaran data terstruktur antara Flutter dan backend, serta integrasi Firebase Cloud Messaging untuk notifikasi perubahan jadwal.',
             tools: [
                 'Flutter',
                 'Laravel',
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'order-delay': {
             title: 'Analisis Harga Maskapai – Strategi Masuk Pasar',
             overview:
-                'Analisis harga tiket penerbangan domestik India menggunakan EDA untuk mengidentifikasi pola harga, segmentasi maskapai, dan peluang strategi masuk pasar.',
+                'EDA dataset tiket penerbangan domestik India menggunakan Python (Pandas): profiling data, penanganan nilai null, normalisasi tipe, segmentasi maskapai berdasarkan kluster rute, dan visualisasi pola harga musiman melalui dashboard Power BI.',
             tools: [
                 'Power BI',
                 'Python',
@@ -748,10 +748,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // CONSOLE MESSAGE (OPTIONAL - FOR FUN)
     // ========================================
-    console.log('%c👋 Hello! Thanks for checking out the code!', 
-                'color: #4A90E2; font-size: 16px; font-weight: bold;');
-    console.log('%cThis portfolio was built with HTML, CSS, and vanilla JavaScript.',
-                'color: #5A6C7D; font-size: 12px;');
     
 });
 
