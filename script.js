@@ -9,6 +9,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project detail data (extendable)
     // ----------------------------------------
     const projectsData = {
+        'm111': {
+            title: 'Dashboard Analitik Operasional Event – M111 Ngalam Folding Bike',
+            overview:
+                'Pipeline data dan dashboard Power BI untuk memantau distribusi peserta dan alur registrasi 500+ catatan secara real-time selama event sepeda lipat pemerintah berlangsung.',
+            tools: [
+                'Power BI',
+                'Power Query',
+                'Microsoft Excel',
+                'ETL',
+                'Data Pipeline'
+            ],
+            problem:
+                'Data registrasi peserta mentah dari 3 sumber operasional berbeda memerlukan pembersihan, standarisasi, dan transformasi sebelum dapat digunakan untuk pengambilan keputusan real-time.',
+            dataTools: {
+                source:
+                'Data registrasi peserta event M111 Ngalam Folding Bike (500+ catatan, 3 sumber operasional)',
+                tools:
+                'Power BI, Power Query, Microsoft Excel',
+                variables:
+                'Distribusi peserta, status registrasi, kupon subsidi, KPI operasional event'
+            },
+            insights: [
+                'Normalisasi entri tidak konsisten dari 3 sumber sumber berhasil menghasilkan dataset terpadu yang siap analitik.',
+                'Kolom kalkulasi turunan mempercepat derivasi KPI tanpa modifikasi data sumber.',
+                'Dashboard real-time mendukung keputusan operasional langsung selama event berlangsung.'
+            ],
+            recommendation: {
+                actions:
+                'Otomasi refresh data dan integrasi langsung ke sistem registrasi untuk eliminasi input manual.',
+                impact:
+                'Reduksi lag pengambilan keputusan operasional dan peningkatan akurasi rekonsiliasi data.'
+            },
+            reflection: {
+                limitations:
+                'Data bersifat operasional satu event; belum ada pipeline otomatis untuk refresh berkala.',
+                learned:
+                'Desain transformasi data yang terdokumentasi memastikan reprodusibilitas dan kemudahan audit.',
+                future:
+                'Bangun pipeline ETL otomatis dan integrasi ke sistem registrasi digital untuk event berikutnya.'
+            },
+            image: {
+                src: '',
+                alt: 'M111 Event Analytics Dashboard'
+            },
+            links: { report: '' }
+        },
         'atm': {
             title: 'Sistem Informasi Akreditasi D4 SIB – Politeknik Negeri Malang',
             overview:
