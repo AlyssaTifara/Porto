@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'm111': {
             title: 'Dashboard Analitik Operasional Event – M111 Ngalam Folding Bike',
             overview:
-                'Pipeline transformasi data dan dashboard Power BI untuk memantau distribusi peserta dan KPI operasional event — mencakup pembersihan, standarisasi, dan penggabungan data dari tiga sumber operasional (500+ catatan).',
+                'Pipeline transformasi data dan dashboard Power BI untuk memantau distribusi peserta dan KPI operasional event mencakup pembersihan, standarisasi, dan penggabungan data dari tiga sumber operasional (500+ catatan).',
             tools: [
                 'Power BI',
                 'Power Query',
@@ -52,6 +52,25 @@ document.addEventListener('DOMContentLoaded', function() {
             image: {
                 src: '',
                 alt: 'M111 Event Analytics Dashboard'
+            },
+            dashboardGallery: {
+                title: 'Dashboard Preview',
+                items: [
+                    {
+                        src: 'assets/documents/projects/M111/light version (1).png',
+                        width: 1568,
+                        height: 1003,
+                        alt: 'M111 Participant Distribution Dashboard preview',
+                        label: 'Participant Distribution Dashboard'
+                    },
+                    {
+                        src: 'assets/documents/projects/M111/light version (2).png',
+                        width: 1672,
+                        height: 941,
+                        alt: 'M111 Operational KPI Dashboard preview',
+                        label: 'Operational KPI Dashboard'
+                    }
+                ]
             },
             links: { report: '' }
         },
@@ -614,6 +633,79 @@ document.addEventListener('DOMContentLoaded', function() {
                     dashboardPreview.hidden = false;
                 } else {
                     dashboardPreview.hidden = true;
+                }
+            }
+
+            // ===== 8C. HANDLE M111 DASHBOARD GALLERY =====
+            const m111DashboardGallery = document.getElementById('m111-dashboard-gallery');
+            const m111DashboardGrid = document.getElementById('m111-dashboard-grid');
+
+            if (m111DashboardGallery && m111DashboardGrid) {
+                const hasGallery = projectId === 'm111' && project.dashboardGallery && Array.isArray(project.dashboardGallery.items) && project.dashboardGallery.items.length > 0;
+
+                if (hasGallery) {
+                    const galleryTitle = project.dashboardGallery.title || 'Dashboard Preview';
+                    const galleryTitleEl = m111DashboardGallery.querySelector('.website-preview-title');
+                    if (galleryTitleEl) {
+                        galleryTitleEl.textContent = galleryTitle;
+                    }
+
+                    m111DashboardGrid.innerHTML = '';
+
+                    project.dashboardGallery.items.forEach((item, index) => {
+                        if (!item || !item.src) return;
+
+                        const card = document.createElement('article');
+                        card.className = 'dashboard-card animate-fade-up';
+                        card.style.animationDelay = `${0.15 + (index * 0.1)}s`;
+
+                        card.innerHTML = `
+                            <div class="dashboard-label">${item.label || 'Dashboard Preview'}</div>
+                            <div class="dashboard-image-frame">
+                                <div class="project-image-skeleton dashboard-card-skeleton" aria-hidden="true"></div>
+                                <img class="project-image dashboard-card-image" alt="" loading="lazy">
+                            </div>
+                        `;
+
+                        const image = card.querySelector('.dashboard-card-image');
+                        const skeleton = card.querySelector('.dashboard-card-skeleton');
+
+                        if (image) {
+                            image.alt = item.alt || `${project.title} preview`;
+                            image.src = item.src;
+                            if (item.width) image.width = item.width;
+                            if (item.height) image.height = item.height;
+                            image.style.aspectRatio = item.width && item.height ? `${item.width} / ${item.height}` : '';
+
+                            const revealImage = () => {
+                                image.classList.add('is-visible');
+                                image.hidden = false;
+                                if (skeleton) skeleton.style.display = 'none';
+                            };
+
+                            image.addEventListener('load', revealImage, { once: true });
+
+                            image.addEventListener('error', () => {
+                                console.warn(`Failed to load M111 dashboard image: ${item.src}`);
+                                card.remove();
+                                if (skeleton) skeleton.style.display = 'none';
+                                if (m111DashboardGrid.children.length === 0) {
+                                    m111DashboardGallery.hidden = true;
+                                }
+                            }, { once: true });
+
+                            if (image.complete && image.naturalWidth > 0) {
+                                revealImage();
+                            }
+                        }
+
+                        m111DashboardGrid.appendChild(card);
+                    });
+
+                    m111DashboardGallery.hidden = m111DashboardGrid.children.length === 0;
+                } else {
+                    m111DashboardGallery.hidden = true;
+                    m111DashboardGrid.innerHTML = '';
                 }
             }
 
