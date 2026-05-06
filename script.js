@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: 'Dashboard Preview',
                 items: [
                     {
-                        src: 'assets/documents/projects/M111/light version (1).png',
+                        src: 'assets/documents/projects/M111/dashboard-1.png',
                         width: 1568,
                         height: 1003,
                         alt: 'M111 Participant Distribution Dashboard preview',
@@ -636,76 +636,92 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // ===== 8C. HANDLE M111 DASHBOARD GALLERY =====
+            // ===== 8C. HANDLE M111 DASHBOARD GALLERY (FIXED VERSION) =====
             const m111DashboardGallery = document.getElementById('m111-dashboard-gallery');
             const m111DashboardGrid = document.getElementById('m111-dashboard-grid');
 
             if (m111DashboardGallery && m111DashboardGrid) {
-                const hasGallery = projectId === 'm111' && project.dashboardGallery && Array.isArray(project.dashboardGallery.items) && project.dashboardGallery.items.length > 0;
 
-                if (hasGallery) {
-                    const galleryTitle = project.dashboardGallery.title || 'Dashboard Preview';
+                const hasGallery =
+                    projectId === 'm111' &&
+                    project.dashboardGallery &&
+                    Array.isArray(project.dashboardGallery.items) &&
+                    project.dashboardGallery.items.length > 0;
+
+                if (!hasGallery) {
+                    m111DashboardGallery.hidden = true;
+                } else {
+
+                    // TITLE (UI FIX: seperti "Tampilan Dashboard")
                     const galleryTitleEl = m111DashboardGallery.querySelector('.website-preview-title');
                     if (galleryTitleEl) {
-                        galleryTitleEl.textContent = galleryTitle;
+                        galleryTitleEl.textContent =
+                            project.dashboardGallery.title || 'Tampilan Dashboard';
                     }
 
+                    // RESET GRID
                     m111DashboardGrid.innerHTML = '';
 
                     project.dashboardGallery.items.forEach((item, index) => {
                         if (!item || !item.src) return;
 
-                        const card = document.createElement('article');
-                        card.className = 'dashboard-card animate-fade-up';
-                        card.style.animationDelay = `${0.15 + (index * 0.1)}s`;
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'dashboard-gallery-item animate-fade-up';
+                        imgContainer.style.animationDelay = `${0.15 + index * 0.1}s`;
 
-                        card.innerHTML = `
-                            <div class="dashboard-label">${item.label || 'Dashboard Preview'}</div>
-                            <div class="dashboard-image-frame">
-                                <div class="project-image-skeleton dashboard-card-skeleton" aria-hidden="true"></div>
-                                <img class="project-image dashboard-card-image" alt="" loading="lazy">
-                            </div>
+                        imgContainer.innerHTML = `
+                            <div class="dashboard-gallery-skeleton" aria-hidden="true"></div>
+                            <img class="dashboard-gallery-image" alt="" loading="lazy" />
                         `;
 
-                        const image = card.querySelector('.dashboard-card-image');
-                        const skeleton = card.querySelector('.dashboard-card-skeleton');
+                        const img = imgContainer.querySelector('.dashboard-gallery-image');
+                        const skeleton = imgContainer.querySelector('.dashboard-gallery-skeleton');
 
-                        if (image) {
-                            image.alt = item.alt || `${project.title} preview`;
-                            image.src = item.src;
-                            if (item.width) image.width = item.width;
-                            if (item.height) image.height = item.height;
-                            image.style.aspectRatio = item.width && item.height ? `${item.width} / ${item.height}` : '';
+                        // IMPORTANT: FIX path + safe URL encoding
+                        const safeSrc = encodeURI(item.src);
 
-                            const revealImage = () => {
-                                image.classList.add('is-visible');
-                                image.hidden = false;
-                                if (skeleton) skeleton.style.display = 'none';
-                            };
-
-                            image.addEventListener('load', revealImage, { once: true });
-
-                            image.addEventListener('error', () => {
-                                console.warn(`Failed to load M111 dashboard image: ${item.src}`);
-                                card.remove();
-                                if (skeleton) skeleton.style.display = 'none';
-                                if (m111DashboardGrid.children.length === 0) {
-                                    m111DashboardGallery.hidden = true;
-                                }
-                            }, { once: true });
-
-                            if (image.complete && image.naturalWidth > 0) {
-                                revealImage();
-                            }
+                        // Set aspect ratio to prevent layout collapse
+                        if (item.width && item.height) {
+                            imgContainer.style.aspectRatio = `${item.width} / ${item.height}`;
                         }
 
-                        m111DashboardGrid.appendChild(card);
+                        img.alt = item.alt || `${project.title} preview`;
+                        img.src = safeSrc;
+
+                        if (item.width && item.height) {
+                            img.width = item.width;
+                            img.height = item.height;
+                        }
+
+                        const showImage = () => {
+                            img.classList.add('is-visible');
+                            img.hidden = false;
+                            if (skeleton) skeleton.style.display = 'none';
+                        };
+
+                        img.addEventListener('load', showImage, { once: true });
+
+                        img.addEventListener('error', () => {
+                            console.warn('Gagal load image:', item.src);
+                            imgContainer.remove();
+
+                            if (skeleton) skeleton.style.display = 'none';
+
+                            if (m111DashboardGrid.children.length === 0) {
+                                m111DashboardGallery.hidden = true;
+                            }
+                        }, { once: true });
+
+                        if (img.complete && img.naturalWidth > 0) {
+                            showImage();
+                        }
+
+                        m111DashboardGrid.appendChild(imgContainer);
                     });
 
-                    m111DashboardGallery.hidden = m111DashboardGrid.children.length === 0;
-                } else {
-                    m111DashboardGallery.hidden = true;
-                    m111DashboardGrid.innerHTML = '';
+                    // hide kalau semua gagal
+                    m111DashboardGallery.hidden =
+                        m111DashboardGrid.children.length === 0;
                 }
             }
 
