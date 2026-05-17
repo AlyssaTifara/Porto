@@ -1239,6 +1239,23 @@ section::before {
     border: 1px solid rgba(159, 139, 255, 0.3);
 }
 
+.section-top-lg {
+    padding-top: var(--spacing-lg);
+}
+
+.section-top-sm {
+    padding-top: var(--spacing-sm);
+}
+
+.section-padding-sm-top {
+    padding: var(--spacing-sm) 0 0;
+}
+
+.text-center-mt-lg {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
 /* === SKILLS GRID === */
 .skills-grid {
     display: grid;
